@@ -8,13 +8,15 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: const Color(0xFF333366),
+      elevation: 4.5,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Icon(icon, size: 60),
           Text(
             title,
-            style: Theme.of(context).textTheme.headline,
+            style: Theme.of(context).textTheme.headline5,
           )
         ],
       ),

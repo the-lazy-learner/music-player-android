@@ -9,15 +9,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Music Player',
-      theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
-        iconTheme: IconThemeData(
-          color: Colors.deepOrange,
-        ),
-        sliderTheme: SliderThemeData(
-          trackHeight: 4.0,
-        )
-      ),
       home: HomeScreen(),
     );
   }

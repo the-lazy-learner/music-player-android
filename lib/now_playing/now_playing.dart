@@ -36,7 +36,7 @@ class _NowPlayingWidgetState extends State<NowPlayingWidget> {
             ),
             Text(
               'One Call away - Charlie Puth',
-              style: Theme.of(context).textTheme.display1.copyWith(
+              style: Theme.of(context).textTheme.headline4.copyWith(
                     fontSize: 24,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

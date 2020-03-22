@@ -9,6 +9,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Music Player',
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+        backgroundColor: Colors.indigo.shade200,
+        scaffoldBackgroundColor: Colors.indigo.shade200,
+        dialogBackgroundColor: Colors.indigo.shade200,
+      ),
       home: HomeScreen(),
     );
   }

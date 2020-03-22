@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'artists_screen.dart';
 import 'category_card.dart';
+import 'songs_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -10,9 +11,16 @@ class HomeScreen extends StatelessWidget {
       body: GridView.count(
         crossAxisCount: 2,
         children: <Widget>[
-          CategoryCard(
-            title: 'Songs',
-            icon: Icons.music_note,
+          GestureDetector(
+            child: CategoryCard(
+              title: 'Songs',
+              icon: Icons.music_note,
+            ),
+            onTap: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => SongsScreen())
+              );
+            },
           ),
           GestureDetector(
             child: CategoryCard(
@@ -20,10 +28,8 @@ class HomeScreen extends StatelessWidget {
               icon: Icons.account_circle,
             ),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => ArtistsScreen())
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ArtistsScreen()));
             },
           ),
           CategoryCard(

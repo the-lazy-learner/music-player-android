@@ -33,7 +33,7 @@ class _ArtistsScreenState extends State<ArtistsScreen> {
               return Card(
                 child: Container(
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: (artist.artistArtPath != null) ? FileImage(File(artist.artistArtPath)) : AssetImage('assets/images/Meo_Music_icon.png')),
+                    image: DecorationImage(image: (artist.artistArtPath != null) ? FileImage(File(artist.artistArtPath)) : AssetImage('assets/images/undefined_art.png')),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,

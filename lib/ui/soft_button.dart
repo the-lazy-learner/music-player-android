@@ -47,9 +47,10 @@ class _SoftButtonState extends State<SoftButton> {
         onPointerUp: _onPointerUp,
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: DecoratedBox(
+          child: Container(
+            padding: EdgeInsets.all(10.0),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30.0),
+              borderRadius: BorderRadius.circular(50.0),
               color: Color.lerp(color, Colors.white, 0.6),
               gradient: LinearGradient(
                 begin: Alignment.topLeft,

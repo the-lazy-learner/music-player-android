@@ -16,12 +16,12 @@ class SongsScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               SoftButton(
-                child: Icon(Icons.arrow_back, size: 40),
+                child: Icon(Icons.arrow_back, size: 32),
                 onTap: () => Navigator.maybePop(context),
               ),
               Text('Songs', style: Theme.of(context).textTheme.headline4),
               SoftButton(
-                child: Icon(Icons.search, size: 40),
+                child: Icon(Icons.menu, size: 32),
               ),
             ],
           ),

@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
       title: 'Music Player',
       theme: ThemeData(
         primarySwatch: Colors.indigo,
-        backgroundColor: Colors.indigo.shade200,
-        scaffoldBackgroundColor: Colors.indigo.shade200,
-        dialogBackgroundColor: Colors.indigo.shade200,
+        backgroundColor: const Color(0xFFCCDEFA),
+        scaffoldBackgroundColor: const Color(0xFFCCDEFA),
+        dialogBackgroundColor: const Color(0xFFCCDEFA),
+        fontFamily: 'Montserrat',
       ),
       home: HomeScreen(),
     );

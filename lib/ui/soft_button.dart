@@ -45,41 +45,38 @@ class _SoftButtonState extends State<SoftButton> {
       child: Listener(
         onPointerDown: _onPointerDown,
         onPointerUp: _onPointerUp,
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Container(
-            padding: EdgeInsets.all(10.0),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50.0),
-              color: Color.lerp(color, Colors.white, 0.6),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [
-                  _isPressed ? color : Color.lerp(color, Colors.black, 0.1),
-                  _isPressed ? Color.lerp(color, Colors.black, 0.05) : color,
-                  _isPressed ? Color.lerp(color, Colors.black, 0.05) : color,
-                  Color.lerp(color, Colors.white, _isPressed ? 0.2 : 0.4),
-                ],
-                stops: [0.0, 0.3, 0.6, 1.0],
-              ),
-              boxShadow: _isPressed
-                  ? null
-                  : [
-                      BoxShadow(
-                        blurRadius: widget.bevel,
-                        offset: -blurOffset,
-                        color: Color.lerp(color, Colors.white, 0.6),
-                      ),
-                      BoxShadow(
-                        blurRadius: widget.bevel,
-                        offset: blurOffset,
-                        color: Color.lerp(color, Colors.black, 0.3),
-                      ),
-                    ],
+        child: Container(
+          padding: EdgeInsets.all(10.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(50.0),
+            color: Color.lerp(color, Colors.white, 0.6),
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                _isPressed ? color : Color.lerp(color, Colors.black, 0.1),
+                _isPressed ? Color.lerp(color, Colors.black, 0.05) : color,
+                _isPressed ? Color.lerp(color, Colors.black, 0.05) : color,
+                Color.lerp(color, Colors.white, _isPressed ? 0.2 : 0.4),
+              ],
+              stops: [0.0, 0.3, 0.6, 1.0],
             ),
-            child: this.widget.child,
+            boxShadow: _isPressed
+                ? null
+                : [
+                    BoxShadow(
+                      blurRadius: widget.bevel,
+                      offset: -blurOffset,
+                      color: Color.lerp(color, Colors.white, 0.6),
+                    ),
+                    BoxShadow(
+                      blurRadius: widget.bevel,
+                      offset: blurOffset,
+                      color: Color.lerp(color, Colors.black, 0.3),
+                    ),
+                  ],
           ),
+          child: this.widget.child,
         ),
       ),
     );

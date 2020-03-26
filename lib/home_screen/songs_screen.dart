@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_audio_query/flutter_audio_query.dart';
 
@@ -11,19 +13,22 @@ class SongsScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          SizedBox(height: MediaQuery.of(context).padding.top),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              SoftButton(
-                child: Icon(Icons.arrow_back, size: 32),
-                onTap: () => Navigator.maybePop(context),
-              ),
-              Text('Songs', style: Theme.of(context).textTheme.headline4),
-              SoftButton(
-                child: Icon(Icons.menu, size: 32),
-              ),
-            ],
+          SizedBox(height: MediaQuery.of(context).padding.top + 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                SoftButton(
+                  child: Icon(Icons.arrow_back, size: 24),
+                  onTap: () => Navigator.maybePop(context),
+                ),
+                Text('Songs', style: Theme.of(context).textTheme.headline4),
+                SoftButton(
+                  child: Icon(Icons.search, size: 24),
+                ),
+              ],
+            ),
           ),
           Expanded(
             child: FutureBuilder<List<SongInfo>>(
@@ -39,10 +44,18 @@ class SongsScreen extends StatelessWidget {
                 return ListView.builder(
                   itemCount: songs.length,
                   itemBuilder: (context, index) {
+                    final albumArt = songs[index].albumArtwork;
                     return ListTile(
                       title: Text(songs[index].title),
                       subtitle: Text(songs[index].artist),
-                      trailing: Icon(Icons.play_arrow, size: 40),
+                      leading: CircleAvatar(
+                        backgroundImage: (albumArt != null)
+                            ? FileImage(File(albumArt))
+                            : AssetImage('assets/images/undefined_art.png'),
+                      ),
+                      trailing: SoftButton(
+                        child: Icon(Icons.play_arrow, size: 24),
+                      ),
                     );
                   },
                 );

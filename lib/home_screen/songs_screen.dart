@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_audio_query/flutter_audio_query.dart';
 
 import '../ui/soft_button.dart';
+import '../now_playing/playing_screen.dart';
 
 class SongsScreen extends StatelessWidget {
   @override
@@ -55,6 +56,13 @@ class SongsScreen extends StatelessWidget {
                       ),
                       trailing: SoftButton(
                         child: Icon(Icons.play_arrow, size: 24),
+                        onTap: () {
+                          Navigator.of(context).push(PageRouteBuilder(
+                            pageBuilder: (_, __, ___) {
+                                return PlayingScreen(song: songs[index]);
+                            }
+                          ));
+                        },
                       ),
                     );
                   },

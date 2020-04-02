@@ -42,13 +42,19 @@ class SongsScreen extends StatelessWidget {
                   );
                 }
                 final songs = snapshot.data;
-                return ListView.builder(
+                return ListView.separated(
                   itemCount: songs.length,
                   itemBuilder: (context, index) {
                     final albumArt = songs[index].albumArtwork;
                     return ListTile(
-                      title: Text(songs[index].title),
-                      subtitle: Text(songs[index].artist),
+                      title: Text(
+                        songs[index].title,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      subtitle: Text(
+                        songs[index].artist,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                       leading: CircleAvatar(
                         backgroundImage: (albumArt != null)
                             ? FileImage(File(albumArt))
@@ -57,15 +63,18 @@ class SongsScreen extends StatelessWidget {
                       trailing: SoftButton(
                         child: Icon(Icons.play_arrow, size: 24),
                         onTap: () {
-                          Navigator.of(context).push(PageRouteBuilder(
-                            pageBuilder: (_, __, ___) {
-                                return PlayingScreen(song: songs[index]);
-                            }
-                          ));
+                          Navigator.of(context)
+                              .push(PageRouteBuilder(pageBuilder: (_, __, ___) {
+                            return PlayingScreen(song: songs[index]);
+                          }));
                         },
                       ),
                     );
                   },
+                  separatorBuilder: (context, index) => Divider(
+                    indent: MediaQuery.of(context).size.width * 0.1,
+                    endIndent: MediaQuery.of(context).size.width * 0.1,
+                  ),
                 );
               },
             ),

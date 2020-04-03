@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         dialogBackgroundColor: const Color(0xFFCCDEFA),
         fontFamily: 'Montserrat',
       ),
+      darkTheme: ThemeData.dark(),
       home: HomeScreen(),
     );
   }

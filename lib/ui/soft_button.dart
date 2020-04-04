@@ -39,6 +39,7 @@ class _SoftButtonState extends State<SoftButton> {
   Widget build(BuildContext context) {
     final blurOffset = Offset(widget.bevel / 2, widget.bevel / 2);
     final color = widget.color ?? Theme.of(context).backgroundColor;
+    final isDarkMode = MediaQuery.of(context).platformBrightness == Brightness.dark;
 
     return GestureDetector(
       onTap: this.widget.onTap,
@@ -67,7 +68,7 @@ class _SoftButtonState extends State<SoftButton> {
                     BoxShadow(
                       blurRadius: widget.bevel,
                       offset: -blurOffset,
-                      color: Color.lerp(color, Colors.white, 0.6),
+                      color: Color.lerp(color, Colors.white, isDarkMode ? 0.3 : 0.6),
                     ),
                     BoxShadow(
                       blurRadius: widget.bevel,

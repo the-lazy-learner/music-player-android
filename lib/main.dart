@@ -16,7 +16,16 @@ class MyApp extends StatelessWidget {
         dialogBackgroundColor: const Color(0xFFCCDEFA),
         fontFamily: 'Montserrat',
       ),
-      darkTheme: ThemeData.dark(),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        backgroundColor: Colors.black,
+        scaffoldBackgroundColor: Colors.grey[800],
+        textTheme: Theme.of(context).textTheme.apply(
+          displayColor: const Color(0xFF64FAB1),
+          bodyColor: const Color(0xFF52C2FA),
+          fontFamily: 'Montserrat',
+        ),
+      ),
       home: HomeScreen(),
     );
   }

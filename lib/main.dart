@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: const Color(0xFFCCDEFA),
         scaffoldBackgroundColor: const Color(0xFFCCDEFA),
         dialogBackgroundColor: const Color(0xFFCCDEFA),
-        textTheme: Theme.of(context).apply(
+        textTheme: Theme.of(context).textTheme.apply(
           fontFamily: 'Montserrat',
         ),
       ),

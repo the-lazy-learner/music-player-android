@@ -15,4 +15,4 @@ The development process on this project has only just begun. The app is not read
 
 ## Contribution
 
-The details of this will be made public later.
+All pull requests are welcome, I'll try to respond to each one within 48 hours as and when possible.
